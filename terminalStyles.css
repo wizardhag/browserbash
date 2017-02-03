@@ -1,0 +1,78 @@
+body{
+  margin:0;
+  background-color:#000000;
+  font-family:"Ubuntu Mono", monospace;
+  color:white;
+  width:100%;
+}
+#header{
+  z-index:5;
+  display:inline-block;
+  height:40px;
+  width:100%;
+  position:fixed;
+  top:0;
+  left:0;
+  background-color:#cccccc;
+  color:black;
+}
+#lineNumCheckbox{
+  z-index:6;
+  position:fixed;
+  top:10px;
+  left:5px;
+}
+table{
+  display:block;
+  width:100%;
+  position:absolute;
+  top:40px;
+  left:0;
+  font-size:16px;
+  border-collapse:collapse;
+  background:none;
+  /** /border:1px solid #00ff00;/**/
+}
+tr{
+  /**/background:none;/*/background-color:purple;/**/
+  /** /border:1px solid #0000ff;/**/
+}
+td{
+  box-sizing:border-box;
+  /** /border:1px solid #ff0000;/**/
+}
+td.line{width:100%;
+  padding:2px 4px;
+  word-break:break-all;
+}
+td.lineNumber{
+  display:none;
+  height:100%;
+  width:100%;
+  padding:0 2px;
+  text-align:right;
+  color:#aaaaaa;
+  /**/border:solid #aaaaaa;
+  border-width:0 1px 0 0;
+  /*/border:1px solid #ff0000;/**/
+  -webkit-user-select: none;  /* Chrome all / Safari all */
+  -moz-user-select: none;     /* Firefox all */
+  -ms-user-select: none;      /* IE 10+ */
+  user-select: none;          /* Likely future */
+}
+#lineNumCheckbox:checked~#table tr .lineNumber{
+  display:inline-block;
+}
+.input{
+  display:inline-block;
+  position:relative;
+  min-width:5px;
+  /** /border:1px solid #00ff00;/**/
+}
+.input:focus{
+  border-color:#ff0000;/*/
+}
+  .input:focus{
+  border:none;/**/
+  outline:none;
+}
