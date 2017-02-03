@@ -58,8 +58,8 @@ function giveFocus(){
 }
 
 function cmdPrompt(){
-  print("<b><span style='color:#8ae234'>wizardhag@"
-        +"THE-FBI</span>"+":<span style='color:#729fcf'>"
+  print("<b><span style='color:#8ae234'>anon@"
+        +"browser</span>"+":<span style='color:#729fcf'>"
         +filePath+"</span></b>$&nbsp;");
   openInput();
 }
@@ -77,7 +77,7 @@ function doInput(){
     printFilt("  --");
     openInput();
   }
-  else{//alert("added this:"+(prevIn+inp)+";");
+  else{
     inHistory.unshift(prevIn+inp);
     thisHistory=inHistory.slice();
     thisHistory.unshift("");
@@ -133,7 +133,7 @@ function KeyPress(e){
       case 67://C
         if(evtobj.shiftKey){
           //Ends current process
-          alert("^C");
+          alert("Ctrl+Shift+C");
         }
         else{
           noDefault=false;
@@ -142,7 +142,7 @@ function KeyPress(e){
       case 90://Z
         if(evtobj.shiftKey){
           //Puts whatever you're running into a background process. fg restores it.
-          alert("Z");
+          alert("Ctrl+Shift+Z");
         }
         break;
       default://nada
@@ -156,14 +156,11 @@ function KeyPress(e){
       switch(event.key){
         case 'ArrowUp':
           if(thisHistory.length-1>thisHistInd){
-            /** /alert("thisHistory["+thisHistInd+"]="+thisHistory[thisHistInd]
-                +"; thisHistory[++"+thisHistInd+"]="+thisHistory[++thisHistInd]
-                +"; thisHistory["+thisHistInd+"]="+thisHistory[thisHistInd]+";");/**/
             var input=$(".input")[0];
             thisHistory[thisHistInd]=input.innerHTML;
             input.innerHTML=thisHistory[++thisHistInd];
             cursorToEndOfInput();//This could use some work
-          }//alert("this:"+thisHistory+";in="+inHistory+";");
+          }
           break;
         case 'ArrowDown':
           if(thisHistInd>0){
