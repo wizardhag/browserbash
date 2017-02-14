@@ -78,7 +78,8 @@ function doInput(){
     openInput();
   }
   else{
-    inHistory.unshift(prevIn+inp);
+    if(prevIn+inp!=inHistory[0])
+      inHistory.unshift(prevIn+inp);
     thisHistory=inHistory.slice();
     thisHistory.unshift("");
     thisHistInd=0;
